@@ -1,0 +1,469 @@
+pyside6 (6.7.3-lliurex) noble; urgency=medium
+
+  * Packaging for noble
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Thu, 03 Oct 2024 16:08:39 +0200
+
+pyside6 (6.6.2-4) unstable; urgency=medium
+
+  * xfail yet another test on arm64.
+
+ -- Stuart Prescott <stuart@debian.org>  Wed, 11 Sep 2024 00:34:47 +1000
+
+pyside6 (6.6.2-3) unstable; urgency=medium
+
+  * Remove local patch for some xfail markings on some tests that now pass.
+  * Add missing build-dep on qml6-module-qtquick-window.
+  * Add additional architecture restrictions on tests based on package
+    availability.
+  * Specify a sensible test-name in d/tests/control for each test to make the
+    logs easier to read.
+  * Mark arm64 test failures as xfail temporarily to allow package build to
+    complete.
+
+ -- Stuart Prescott <stuart@debian.org>  Tue, 10 Sep 2024 06:35:35 +1000
+
+pyside6 (6.6.2-2) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Enable build on all architectures, excluding webengine support
+    where not available
+  * Also make sure the pdf binding is only built where
+    python3-pyqt6.qtpdf is available
+
+  [ Stuart Prescott ]
+  * Drop build-dep on nuitka since it isn't available in trixie.
+
+ -- Stuart Prescott <stuart@debian.org>  Sat, 10 Aug 2024 14:41:41 +1000
+
+pyside6 (6.6.2-1) unstable; urgency=medium
+
+  * New upstream release
+    - port packaging from pyside2 to pyside6 for Qt6 support
+      (Closes: #1062800)
+    - add/update d/rules and d/set-paths
+    - update lintian-overrides
+    - add patches to build cleanly
+
+ -- Stuart Prescott <stuart@debian.org>  Sun, 21 Jul 2024 20:56:17 +1000
+
+pyside2 (5.15.11-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Drop patches, included in the new release:
+    - libshiboken-Fix-a-crash-in-Shiboken-Object-isValid.patch
+    - Fix-usage-of-Py_TYPE-for-Python-3.11.patch
+    - libshiboken-Fix-crashes-with-static-strings-in-Python-3.11.patch
+    - Fix-Property-GC-tracking-for-Python-3.11.patch
+    - Fix-GLES-builds.patch
+  * Refresh other patches.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 15 Oct 2023 23:04:58 +0300
+
+pyside2 (5.15.10-4) unstable; urgency=medium
+
+  * Team upload.
+  * Build with LLVM 15 for now (closes: #1051886).
+  * Backport upstream patch to fix test failures with Python 3.11.5.
+  * Add a debian/clean file (closes: #1047480).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 01 Oct 2023 23:43:44 +0300
+
+pyside2 (5.15.10-3) unstable; urgency=medium
+
+  * Team upload.
+  * Stop building the Qt WebEngine package on mipsel (closes: #1041253).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 16 Jul 2023 17:49:14 +0300
+
+pyside2 (5.15.10-2) unstable; urgency=medium
+
+  * Team upload.
+  * Regenerate debian/tests/control using debian/tests/control.gen.
+  * Enable the Qt WebEngine packages on mips64el.
+  * Enable the Qt Data Visualization package on all architectures.
+  * Test WebEngine only on architectures where it is available.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 28 Jun 2023 00:02:49 +0300
+
+pyside2 (5.15.10-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Drop patches, no longer needed after upstream changes:
+    - Revert-removal-of-version-check.patch
+    - importlib-machinery.patch
+  * Refresh other patches.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 18 Jun 2023 19:12:26 +0300
+
+pyside2 (5.15.8-2) unstable; urgency=medium
+
+  * Team upload.
+  * Backport upstream patch to fix GLES builds.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 09 Jan 2023 00:06:53 +0400
+
+pyside2 (5.15.8-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Drop patches, included in the new release:
+    - fix-reuse-build.patch
+    - qApp-fix-flag-handling.patch
+    - py3.10-prep-reset-the-type-cache-after-feature-switching.patch
+    - py3.10-prep-Fix-parser.py-for-changed-typing-module.patch
+    - py3.10-prep-Finally-support-Python-3.10.patch
+    - py3.10-prep-Fix-a-very-old-refcounting-error-in-time_test.patch
+    - shiboken6-Adapt-to-LLVM-12.01.patch
+  * Refresh debian/patches/blacklist-failing-tests.patch.
+  * Backport 7 upstream patches to support Python 3.11 (closes: #1027950).
+  * Remove dh-exec (debhelper now supports substitutions natively).
+  * Revert a change from 5.15.8 which broke build without limited API.
+  * Add a patch to fix AttributeError in signature_bootstrap.py.
+  * Fix redundant-globbing-patterns Lintian warning.
+  * Bump Standards-Version to 4.6.2, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 07 Jan 2023 17:38:12 +0400
+
+pyside2 (5.15.2-2.3) unstable; urgency=medium
+
+  * Call "py3versions -d" instead of "py3versions -r" in tests.
+
+ -- Christian Marillat <marillat@debian.org>  Fri, 17 Jun 2022 17:49:37 +0200
+
+pyside2 (5.15.2-2.2) unstable; urgency=medium
+
+  * Don't test with python3-all but python3 as only the current python3 is
+    supported.  (Closes:# 1012878)
+
+ -- Christian Marillat <marillat@debian.org>  Thu, 16 Jun 2022 10:57:23 +0200
+
+pyside2 (5.15.2-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Should always Build-Depends on python3-dev but not on python3-all-dev.
+    This package is unable to manage two python versions at the same time.
+    (Closes: #1008849)
+
+ -- Christian Marillat <marillat@debian.org>  Sun, 12 Jun 2022 18:30:03 +0200
+
+pyside2 (5.15.2-2) unstable; urgency=medium
+
+  * Backport upstream patches for Python 3.10 support (closes: #999369).
+  * Backport upstream patch to adapt for LLVM 12.01.
+  * Run build-time tests with all supported Python versions.
+    - Add a patch to make the tests find the matching build directory.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 16 Nov 2021 12:16:14 +0300
+
+pyside2 (5.15.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * Add missing dependencies to make the autopkgtest pass again.
+  * Backport proposed upstream patch to fix qApp flags handling.
+    - Unblacklist QtWidgets::bug_307 test, it should not fail anymore.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 26 Dec 2020 11:39:45 +0300
+
+pyside2 (5.15.2-1~exp2) experimental; urgency=medium
+
+  * Add packages for Qt3DExtras and Qt3DAnimation
+  * Add update-sip-import.patch (Closes: #966041)
+
+ -- Kurt Kremitzki <kkremitzki@debian.org>  Sun, 20 Dec 2020 11:32:30 -0600
+
+pyside2 (5.15.2-1~exp1) experimental; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * New upstream release.
+  * Drop python3.9.patch, included in the new release.
+  * Rebase other patches.
+  * Backport upstream changes to pass --reuse-build only to commands that
+    support it.
+  * Build with system patchelf on all architectures. It is now available on
+    mipsel and mips64el too.
+    - Drop update-patchelf.patch, not needed with system patchelf.
+  * Continue building HTML documentation (upstream defaults to qch now).
+  * Replace Qt Quick Controls 1 build-dependency with Qt Quick Controls 2.
+  * Build with default llvm version (closes: #974784).
+  * Revert addition of “Multi-Arch: same” from the previous upload.
+    libpyside2-py3-5.15 is not multi-arch ready because the list of built
+    modules (in _config.py) may be different on different architectures.
+  * Bump Qt build-dependencies to 5.15 (as ftbfs-old-qt.patch was dropped).
+  * Minor debian/rules cleanup.
+
+  [ Alexander Volkov ]
+  * Add python3-pyside2.qt{quickcontrols2,remoteobjects,serialport} packages.
+
+ -- Kurt Kremitzki <kkremitzki@debian.org>  Sat, 19 Dec 2020 14:26:09 -0600
+
+pyside2 (5.15.0-6) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints.
+    + python-pyside2-doc, shiboken2-doc: Add Multi-Arch: foreign.
+    + libshiboken2-dev, python3-pyside2.qt*: Add Multi-Arch: same.
+
+  [ Dmitry Shachnev ]
+  * Drop ftbfs-old-qt.patch. Not needed since Debian has Qt 5.15.
+  * Stop hardcoding py3.8 in debian/shiboken2-doc.docs (closes: #976900).
+  * Blacklist QtWidgets::bug_307 test for now (closes: #976516).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 14 Dec 2020 20:31:39 +0300
+
+pyside2 (5.15.0-5) unstable; urgency=medium
+
+  * Team upload.
+  * Run tests with QSG_NO_DEPTH_BUFFER=1 on mips64el (see #868745).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 19 Oct 2020 21:50:57 +0300
+
+pyside2 (5.15.0-4) unstable; urgency=medium
+
+  * Team upload.
+  * Drop preload-libglx-mesa.patch, not needed with glibc ≥ 2.31-1.
+  * Backport upstream patch to add support for Python 3.9 (closes: #972194).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Thu, 15 Oct 2020 20:06:52 +0300
+
+pyside2 (5.15.0-3) unstable; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Bump Qt build-dependencies to 5.14. As most Qt packages have a
+    Build-Depends-Package field in their symbols files, dpkg-shlibdeps will
+    use that information and generate a runtime dependency on a new enough
+    Qt version (closes: #963983).
+
+  [ Kurt Kremitzki ]
+  * Remove Freexian folks and add myself to Uploaders
+  * Correct libshiboken2 CMake include path (Closes: #964201)
+
+ -- Kurt Kremitzki <kkremitzki@debian.org>  Sun, 05 Jul 2020 05:13:51 -0500
+
+pyside2 (5.15.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Preload libGLX_mesa.so.0 in web_engine_initialize.py, to work around
+    test failure on arm64 (closes: #963709).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 29 Jun 2020 15:26:26 +0300
+
+pyside2 (5.15.0-1) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Team upload
+  * Upload to unstable
+  * Drop trailing spaces from changelog file
+  * Bump compat level to 13
+  * Bump std-version to 4.5.0
+  * Add R^3: no
+
+ -- Kurt Kremitzki <kurt@kwk.systems>  Thu, 25 Jun 2020 21:15:20 -0500
+
+pyside2 (5.15.0-1~exp1) experimental; urgency=medium
+
+  [ Steve Langasek ]
+  * Add test dependency on python3-all to fix autopkgtests (Closes: #950127)
+
+  [ Gianfranco Costamagna ]
+  * Add python3-distro needed for tests.
+  * Drop "uic" and "rcc" from control file, removed upstream (LP: #1874095)
+  * Add missing Breaks/Replaces for upgrading from previous version
+    (Closes: #949339)
+  * Drop pyside2uic tests, dropped upstream
+  * New upstream version 5.15.0 (Closes: #950126, Closes: #960008)
+  * Drop old Fix-build-with-Qt-5.12, addressed upstream
+  * Add patch to fix build failures with old qt implementation
+  * Refresh patches
+  * Bump copyright years
+  * Bump soname to 15
+  * Drop manpage, removed upstream
+  * Use llvm-9 to build, fixing a build failure
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Sat, 06 Jun 2020 14:48:45 +0200
+
+pyside2 (5.14.0-1~exp1) experimental; urgency=medium
+
+  [ Raphaël Hertzog ]
+  * Team upload
+  * New upstream version 5.14.0. Closes: #945376, #947101
+  * Update patches (3 dropped, one new for Qt 5.12 compat)
+  * Use --ignore-git option instead of custom patch
+  * Update package names for version 5.14
+  * Drop python3-pyside2uic, there's no such library anymore
+  * Re-enable tests failing due to broken XDG_RUNTIME_DIR
+  * Drop package prefix from lintian overrides
+  * Drop removed file from debian/copyright
+  * Fix arch-all build on 32 bit arches. Closes: #948764
+    Thanks to peter green <plugwash@p10link.net> for the patch.
+
+  [ Kurt Kremitzki ]
+  * Add CMake sed for pyside2 include path
+  * Add CMake sed for multi-Python version support
+
+ -- Kurt Kremitzki <kurt@kwk.systems>  Mon, 13 Jan 2020 00:10:14 -0600
+
+pyside2 (5.13.2-2.2) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * Update cmake paths for new locations
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Sun, 29 Dec 2019 22:44:55 +0100
+
+pyside2 (5.13.2-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * Add an explicit shiboken dependency to fix FTBFS for reverse-dependencies
+    cmake based, who expect it being installed (Closes: #946082)
+    - thanks Tommaso Colombo for the patch
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 24 Dec 2019 09:22:39 +0100
+
+pyside2 (5.13.2-2) unstable; urgency=medium
+
+  * Do not build-depends on libqt5datavisualization5-dev on mipsel and
+    mpis64el (Closes: #945174) and limit .*qtdatavisualization binary package
+    to arch: amd64 arm64 armel armhf i386 ppc64el s390x
+  * Limit python3-pyside2.qtwebengine to amd64 arm64 armhf i386 mipsel
+    (qtwebengine5-dev is not available for other architectures)
+  * Add a patch to blacklist failing tests
+
+ -- Sophie Brun <sophie@freexian.com>  Fri, 22 Nov 2019 10:28:55 +0100
+
+pyside2 (5.13.2-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Remove almost all of Python 2 binary packages (no rdeps):
+     - python-pyside2.qt3dcore
+     - python-pyside2.qt3dinput
+     - python-pyside2.qt3dlogic
+     - python-pyside2.qt3drender
+     - python-pyside2.qtcharts
+     - python-pyside2.qtconcurrent
+     - python-pyside2.qthelp
+     - python-pyside2.qtlocation
+     - python-pyside2.qtmultimedia
+     - python-pyside2.qtmultimediawidgets
+     - python-pyside2.qtnetwork
+     - python-pyside2.qtpositioning
+     - python-pyside2.qtprintsupport
+     - python-pyside2.qtqml
+     - python-pyside2.qtquick
+     - python-pyside2.qtquickwidgets
+     - python-pyside2.qtscript
+     - python-pyside2.qtscripttools
+     - python-pyside2.qtsensors
+     - python-pyside2.qtsql
+     - python-pyside2.qttest
+     - python-pyside2.qttexttospeech
+     - python-pyside2.qtwebchannel
+     - python-pyside2.qtwebenginecore
+     - python-pyside2.qtwebenginewidgets
+     - python-pyside2.qtwebsockets
+     - python-pyside2.qtx11extras
+     - python-pyside2.qtxmlpatterns
+
+  [ Sophie Brun ]
+  * Update debian/watch
+  * New upstream version 5.13.2
+  * Refresh patches and remove obsolete patches
+  * Add missing build-deps
+  * Force pybuild to use distutils, not Cmake
+  * Replace deprecated upstream option --jobs with --parallel
+  * Update documentation build
+  * Add a patch to support Python 3.8 (Closes: #942753)
+  * Add new binary packages
+     - python3-pyside2.qtdatavisualization
+     - python3-pyside2.qtopenglfunctions
+     - python3-pyside2.qtscxml
+     - python3-pyside2.qtwebengine
+  * Update list of built files in debian/rules
+  * Switch pyside2-tools to Python3
+  * Switch to debhelper-compat 12
+  * Bump Standards-Version to 4.4.1 (no changes)
+  * Update installation of python3 module shiboken2
+  * Add autopkgtest
+  * Add missing Conflicts/Replaces and Provides for libpyside2-*
+  * Add a patch to use python3 in pyside2-tools
+  * Remove disable failing test in debian/rules
+  * Add missing depends (Closes: #943709)
+  * Run the tests and add missing build-deps for tests
+  * Remove useless build-dep pyqt5-dev
+
+  [ Raphaël Hertzog ]
+  * Drop remaining python2 parts.
+
+ -- Sophie Brun <sophie@freexian.com>  Fri, 15 Nov 2019 10:15:57 +0100
+
+pyside2 (5.11.2-3) unstable; urgency=medium
+
+  [ Sébastien Delafond ]
+  * Do not build-depends on patchelf on mips and mipsel (Closes: #917199)
+
+ -- Sebastien Delafond <seb@debian.org>  Wed, 16 Jan 2019 16:30:16 +0100
+
+pyside2 (5.11.2-2) unstable; urgency=medium
+
+  [ Sébastien Delafond ]
+  * Add myself to uploaders
+  * Do not build-depends on patchelf on mips64el (Closes: #917200)
+
+ -- Sebastien Delafond <seb@debian.org>  Thu, 10 Jan 2019 09:21:43 +0100
+
+pyside2 (5.11.2-1) unstable; urgency=medium
+
+  [ Raphaël Hertzog ]
+  * New upstream version 5.11.2
+  * Remove patches merged upstream
+  * Merge fix-PAGESIZE.patch into update-patchelf.patch
+  * Add patchelf to Build-Depends
+  * Bump Standards-Version to 4.2.1
+
+  [ Frédéric Bonnard ]
+  * Fix hardcoded PAGESIZE for patchelf.cc. Closes: #909265
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Fri, 28 Sep 2018 15:09:34 +0200
+
+pyside2 (5.11.0-4) unstable; urgency=medium
+
+  * Use default llvm-dev and libclang-dev (Closes: #906168)
+  * Add Cmake config files for Python3 (Closes: #906020)
+  * Fix debian/libpyside2-5.11.install for triplets that are not *-linux-gnu
+    (thanks to Adrian Bunk)
+  * Add an upstream patch to fix build on armel/armhf
+
+ -- Sophie Brun <sophie@freexian.com>  Mon, 27 Aug 2018 12:53:29 +0200
+
+pyside2 (5.11.0-3) unstable; urgency=medium
+
+  * More fixes for builds building only arch any or only arch all.
+  * Really fix the build with dpkg-buildpackage -A.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Tue, 31 Jul 2018 21:33:04 +0200
+
+pyside2 (5.11.0-2) unstable; urgency=medium
+
+  [ Raphaël Hertzog ]
+  * Fix build with dpkg-buildpackage -A. Closes: #904892
+  * Fix python-pyside2 dependencies. Replace python-pyside2.widgets by
+    python-pyside2.qtwidgets.
+
+  [ Sophie Brun ]
+  * Drop useless "Testsuite: autopkgtest-pkg-python".
+  * Enable parallel build.
+  * Limit QtWebEngine packages to amd64 arm64 armhf i386 mipsel.
+  * Remove unused lintian-overrides.
+  * Use python2 only in pyside2-tools.
+  * Remove big metapackages python-pyside2 and python3-pyside2.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Tue, 31 Jul 2018 16:37:40 +0200
+
+pyside2 (5.11.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #877871)
+
+ -- Sophie Brun <sophie@freexian.com>  Thu, 26 Jul 2018 17:47:45 +0200

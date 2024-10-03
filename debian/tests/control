@@ -1,0 +1,382 @@
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qt3danimation PySide6.Qt3DAnimation
+Depends:
+ python3,
+ python3-pyside6.qt3danimation,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qt3danimation
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qt3dcore PySide6.Qt3DCore
+Depends:
+ python3,
+ python3-pyside6.qt3dcore,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qt3dcore
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qt3dextras PySide6.Qt3DExtras
+Depends:
+ python3,
+ python3-pyside6.qt3dextras,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qt3dextras
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qt3dinput PySide6.Qt3DInput
+Depends:
+ python3,
+ python3-pyside6.qt3dinput,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qt3dinput
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qt3dlogic PySide6.Qt3DLogic
+Depends:
+ python3,
+ python3-pyside6.qt3dlogic,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qt3dlogic
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qt3drender PySide6.Qt3DRender
+Depends:
+ python3,
+ python3-pyside6.qt3drender,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qt3drender
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtasyncio PySide6.QtAsyncio
+Depends:
+ python3,
+ python3-pyside6.qtasyncio,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtasyncio
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtbluetooth PySide6.QtBluetooth
+Depends:
+ python3,
+ python3-pyside6.qtbluetooth,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtbluetooth
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtcharts PySide6.QtCharts
+Depends:
+ python3,
+ python3-pyside6.qtcharts,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtcharts
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtconcurrent PySide6.QtConcurrent
+Depends:
+ python3,
+ python3-pyside6.qtconcurrent,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtconcurrent
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtcore PySide6.QtCore
+Depends:
+ python3,
+ python3-pyside6.qtcore,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtcore
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtdatavisualization PySide6.QtDataVisualization
+Depends:
+ python3,
+ python3-pyside6.qtdatavisualization,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtdatavisualization
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtdbus PySide6.QtDBus
+Depends:
+ python3,
+ python3-pyside6.qtdbus,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtdbus
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtdesigner PySide6.QtDesigner
+Depends:
+ python3,
+ python3-pyside6.qtdesigner,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtdesigner
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtgui PySide6.QtGui
+Depends:
+ python3,
+ python3-pyside6.qtgui,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtgui
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qthelp PySide6.QtHelp
+Depends:
+ python3,
+ python3-pyside6.qthelp,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qthelp
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qthttpserver PySide6.QtHttpServer
+Depends:
+ python3,
+ python3-pyside6.qthttpserver,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qthttpserver
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtmultimedia PySide6.QtMultimedia
+Depends:
+ python3,
+ python3-pyside6.qtmultimedia,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtmultimedia
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtmultimediawidgets PySide6.QtMultimediaWidgets
+Depends:
+ python3,
+ python3-pyside6.qtmultimediawidgets,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtmultimediawidgets
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtlocation PySide6.QtLocation
+Depends:
+ python3,
+ python3-pyside6.qtlocation,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtlocation
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtnetwork PySide6.QtNetwork
+Depends:
+ python3,
+ python3-pyside6.qtnetwork,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtnetwork
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtnetworkauth PySide6.QtNetworkAuth
+Depends:
+ python3,
+ python3-pyside6.qtnetworkauth,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtnetworkauth
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtnfc PySide6.QtNfc
+Depends:
+ python3,
+ python3-pyside6.qtnfc,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtnfc
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtopengl PySide6.QtOpenGL
+Depends:
+ python3,
+ python3-pyside6.qtopengl,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtopengl
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtopenglwidgets PySide6.QtOpenGLWidgets
+Depends:
+ python3,
+ python3-pyside6.qtopenglwidgets,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtopenglwidgets
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtpdf PySide6.QtPdf
+Depends:
+ python3,
+ python3-pyside6.qtpdf,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtpdf
+Architecture: amd64 arm64 armhf i386
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtpdfwidgets PySide6.QtPdfWidgets
+Depends:
+ python3,
+ python3-pyside6.qtpdfwidgets,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtpdfwidgets
+Architecture: amd64 arm64 armhf i386
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtpositioning PySide6.QtPositioning
+Depends:
+ python3,
+ python3-pyside6.qtpositioning,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtpositioning
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtprintsupport PySide6.QtPrintSupport
+Depends:
+ python3,
+ python3-pyside6.qtprintsupport,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtprintsupport
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtqml PySide6.QtQml
+Depends:
+ python3,
+ python3-pyside6.qtqml,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtqml
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtquick PySide6.QtQuick
+Depends:
+ python3,
+ python3-pyside6.qtquick,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtquick
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtquick3d PySide6.QtQuick3D
+Depends:
+ python3,
+ python3-pyside6.qtquick3d,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtquick3d
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtquickcontrols2 PySide6.QtQuickControls2
+Depends:
+ python3,
+ python3-pyside6.qtquickcontrols2,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtquickcontrols2
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtquickwidgets PySide6.QtQuickWidgets
+Depends:
+ python3,
+ python3-pyside6.qtquickwidgets,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtquickwidgets
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtremoteobjects PySide6.QtRemoteObjects
+Depends:
+ python3,
+ python3-pyside6.qtremoteobjects,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtremoteobjects
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtscxml PySide6.QtScxml
+Depends:
+ python3,
+ python3-pyside6.qtscxml,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtscxml
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtsensors PySide6.QtSensors
+Depends:
+ python3,
+ python3-pyside6.qtsensors,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtsensors
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtserialbus PySide6.QtSerialBus
+Depends:
+ python3,
+ python3-pyside6.qtserialbus,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtserialbus
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtserialport PySide6.QtSerialPort
+Depends:
+ python3,
+ python3-pyside6.qtserialport,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtserialport
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtspatialaudio PySide6.QtSpatialAudio
+Depends:
+ python3,
+ python3-pyside6.qtspatialaudio,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtspatialaudio
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtsql PySide6.QtSql
+Depends:
+ python3,
+ python3-pyside6.qtsql,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtsql
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtstatemachine PySide6.QtStateMachine
+Depends:
+ python3,
+ python3-pyside6.qtstatemachine,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtstatemachine
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtsvg PySide6.QtSvg
+Depends:
+ python3,
+ python3-pyside6.qtsvg,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtsvg
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtsvgwidgets PySide6.QtSvgWidgets
+Depends:
+ python3,
+ python3-pyside6.qtsvgwidgets,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtsvgwidgets
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qttest PySide6.QtTest
+Depends:
+ python3,
+ python3-pyside6.qttest,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qttest
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qttexttospeech PySide6.QtTextToSpeech
+Depends:
+ python3,
+ python3-pyside6.qttexttospeech,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qttexttospeech
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtuitools PySide6.QtUiTools
+Depends:
+ python3,
+ python3-pyside6.qtuitools,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtuitools
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtwebchannel PySide6.QtWebChannel
+Depends:
+ python3,
+ python3-pyside6.qtwebchannel,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtwebchannel
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtwebenginecore PySide6.QtWebEngineCore
+Depends:
+ python3,
+ python3-pyside6.qtwebenginecore,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtwebenginecore
+Architecture: amd64 arm64 armhf i386
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtwebenginequick PySide6.QtWebEngineQuick
+Depends:
+ python3,
+ python3-pyside6.qtwebenginequick,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtwebenginequick
+Architecture: amd64 arm64 armhf i386
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtwebenginewidgets PySide6.QtWebEngineWidgets
+Depends:
+ python3,
+ python3-pyside6.qtwebenginewidgets,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtwebenginewidgets
+Architecture: amd64 arm64 armhf i386
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtwebsockets PySide6.QtWebSockets
+Depends:
+ python3,
+ python3-pyside6.qtwebsockets,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtwebsockets
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtwidgets PySide6.QtWidgets
+Depends:
+ python3,
+ python3-pyside6.qtwidgets,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtwidgets
+
+Test-Command: debian/tests/test_install_python3.sh python3-pyside6.qtxml PySide6.QtXml
+Depends:
+ python3,
+ python3-pyside6.qtxml,
+Restrictions: allow-stderr, superficial
+Features: test-name=python3-pyside6.qtxml

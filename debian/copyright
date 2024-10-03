@@ -1,0 +1,1321 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: PySide6
+Source: https://download.qt.io/official_releases/QtForPython/
+
+Files: *
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: build_scripts/config.py
+Copyright: 2018, 2022, The Qt Company Ltd.
+License: GPL-2 or GPL-3 or LGPL-3
+
+Files: debian/*
+Copyright: 2024, Stuart Prescott <stuart@debian.org>
+ 2020-2023, Dmitry Shachnev <mitya57@debian.org>
+ 2018, 2019, Sophie Brun <sophie@freexian.com>
+License: GPL-2+ or LGPL-3
+
+Files: examples/bluetooth/lowenergyscanner/Scanner/*
+Copyright: 2023, The Qt Company Ltd.
+ 2013, BlackBerry Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/bluetooth/lowenergyscanner/Scanner/Main.qml
+ examples/bluetooth/lowenergyscanner/Scanner/qmldir
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/corelib/settingseditor/settingseditor.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/corelib/threads/mandelbrot.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/demos/documentviewer/pdfviewer/*
+Copyright: 2017, Klaralvdalens Datakonsult AB (KDAB).
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/demos/documentviewer/pdfviewer/pdfviewer.py
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/httpserver/*
+Copyright: 2022, The Qt Company Ltd.
+ 2020, Mikhail Svetkin <mikhail.svetkin@gmail.com>
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/httpserver/afterrequest/doc/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/multimedia/audiooutput/audiooutput.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/network/blockingfortuneclient/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/network/fortuneclient/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/network/fortuneserver/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/network/threadedfortuneserver/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/opengl/hellogl2/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/opengl/hellogl2/doc/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/opengl/hellogl2/mainwindow.py
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/opengl/textures/textures.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/quick/shared/LauncherList.qml
+Copyright: 2017, The Qt Company Ltd.
+ 2017, Crimson AS <info@crimson.no>
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/quick/shared/shared_rc.py
+Copyright: 2017, 2021, The Qt Comp
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/quick/window/rc_window.py
+Copyright: 2017, 2021, The Qt Comp
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/quickcontrols/gallery/rc_gallery.py
+Copyright: 2017, 2021, The Qt Comp
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/remoteobjects/*
+Copyright: 2022, The Qt Company Ltd.
+ 2017, Ford Motor Company
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/samplebinding/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: examples/scriptableapplication/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: examples/statemachine/*
+Copyright: 2022, The Qt Company Ltd.
+ 2010, velociraptor Genjix <aphidia@hotmail.com>
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/statemachine/moveblocks/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/statemachine/trafficlight/doc/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/webchannel/*
+Copyright: 2022, The Qt Company Ltd.
+ 2016, 2017, Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.com, author Milian Wolff <milian.wolff@kdab.com>
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/webchannel/standalone/dialog.ui
+ examples/webchannel/standalone/index.html
+ examples/webchannel/standalone/ui_dialog.py
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/webchannel/standalone/doc/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/webenginewidgets/markdowneditor/resources/3rdparty/*
+Copyright: 2011-2014, Christopher Jeffrey. (MIT Licensed)
+License: Expat
+
+Files: examples/webenginewidgets/markdowneditor/resources/3rdparty/markdown.css
+Copyright: Twitter Inc.
+License: Apache-2.0
+
+Files: examples/widgetbinding/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: examples/widgets/animation/animatedtiles/animatedtiles.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/animation/appchooser/appchooser.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/animation/easing/easing.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/animation/states/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/animation/states/doc/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/dialogs/classwizard/classwizard.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/dialogs/extension/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/dialogs/standarddialogs/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/dialogs/trivialwizard/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/draganddrop/draggabletext/draggabletext.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/effects/lighting/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/graphicsview/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/graphicsview/diagramscene/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/graphicsview/diagramscene/diagramscene.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/graphicsview/dragdroprobot/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/graphicsview/dragdroprobot/dragdroprobot.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/itemviews/address_book/*
+Copyright: 2022, The Qt Company Ltd.
+ 2011, Arun Srinivasan <rulfzid@gmail.com>
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/itemviews/address_book/doc/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/itemviews/basicfiltermodel/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/itemviews/fetchmore/*
+Copyright: 2022, The Qt Company Ltd.
+ 2013, Riverbank Computing Limited.
+ 2009, Darryl Wallace, 2009, <wallacdj@gmail.com>
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/itemviews/stardelegate/*
+Copyright: 2022, The Qt Company Ltd.
+ 2011, Arun Srinivasan <rulfzid@gmail.com>
+ 2010, Hans-Peter Jansen <hpj@urpla.net>
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/itemviews/stardelegate/doc/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/layouts/basiclayouts/basiclayouts.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/layouts/dynamiclayouts/dynamiclayouts.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/layouts/flowlayout/flowlayout.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/mainwindows/application/application.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/mainwindows/dockwidgets/dockwidgets.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/mainwindows/mdi/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/painting/basicdrawing/basicdrawing.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/painting/concentriccircles/concentriccircles.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/richtext/orderform/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/richtext/syntaxhighlighter/syntaxhighlighter.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/richtext/textobject/textobject.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/tutorials/addressbook/*
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/tutorials/addressbook/doc/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/widgets/widgets/tetrix/tetrix.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: examples/xml/dombookmarks/dombookmarks.py
+Copyright: 2022, 2023, The Qt Company Ltd.
+ 2010, 2013, Riverbank Computing Limited.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside-tools/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside-tools/cmake/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/CMakeLists.txt
+ sources/pyside6/cmake_uninstall.cmake
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/Qt3DAnimation/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/Qt3DAnimation/typesystem_3danimation.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/Qt3DCore/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/Qt3DCore/typesystem_3dcore.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/Qt3DExtras/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/Qt3DExtras/typesystem_3dextras.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/Qt3DInput/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/Qt3DInput/typesystem_3dinput.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/Qt3DLogic/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/Qt3DLogic/typesystem_3dlogic.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/Qt3DRender/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/Qt3DRender/typesystem_3drender.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtAxContainer/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtBluetooth/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtBluetooth/typesystem_bluetooth.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtCharts/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtCharts/typesystem_charts.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtConcurrent/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtCore/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtDBus/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtDataVisualization/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtDesigner/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtGraphs/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtGui/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtHelp/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtHttpServer/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtHttpServer/typesystem_httpserver.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtLocation/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtLocation/typesystem_location.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtMultimedia/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtMultimedia/typesystem_multimedia.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtMultimediaWidgets/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtMultimediaWidgets/typesystem_multimediawidgets.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtNetwork/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtNetwork/typesystem_network.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtNetworkAuth/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtNetworkAuth/typesystem_networkauth.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtNfc/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtNfc/typesystem_nfc.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtOpenGL/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtOpenGLWidgets/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtOpenGLWidgets/typesystem_openglwidgets.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtPdf/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtPdf/typesystem_pdf.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtPdfWidgets/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtPdfWidgets/typesystem_pdfwidgets.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtPositioning/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtPositioning/typesystem_positioning.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtPrintSupport/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtQml/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtQuick/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtQuick3D/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtQuick3D/typesystem_quick3d.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtQuickControls2/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtQuickControls2/typesystem_quickcontrols2.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtQuickWidgets/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtQuickWidgets/typesystem_quickwidgets.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtRemoteObjects/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtRemoteObjects/typesystem_remoteobjects.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtScxml/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtScxml/typesystem_scxml.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtSensors/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtSensors/typesystem_sensors.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtSerialBus/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtSerialBus/typesystem_serialbus.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtSerialPort/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtSerialPort/typesystem_serialport.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtSpatialAudio/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtSpatialAudio/typesystem_spatialaudio.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtSql/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtStateMachine/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtStateMachine/typesystem_statemachine.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtSvg/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtSvg/typesystem_svg.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtSvgWidgets/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtSvgWidgets/typesystem_svgwidgets.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtTest/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtTextToSpeech/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtTextToSpeech/typesystem_texttospeech.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtUiTools/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtWebChannel/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtWebChannel/typesystem_webchannel.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtWebEngineCore/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtWebEngineCore/typesystem_webenginecore.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtWebEngineQuick/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtWebEngineQuick/typesystem_webenginequick.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtWebEngineWidgets/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtWebEngineWidgets/typesystem_webenginewidgets.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtWebSockets/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtWebSockets/typesystem_websockets.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/PySide6/QtWidgets/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtXml/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/PySide6/QtXml/typesystem_xml.xml
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/cmake/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/doc/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/doc/PySide6/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/_themes/pysidedocs_qthelp/domainindex.html
+Copyright: 2007-2010, the Sphinx team, see AUTHORS.
+License: BSD-2-clause
+
+Files: sources/pyside6/doc/api.rst
+ sources/pyside6/doc/conf.py.in
+ sources/pyside6/doc/considerations.rst
+ sources/pyside6/doc/contents.rst
+ sources/pyside6/doc/faq.rst
+ sources/pyside6/doc/modules.rst
+ sources/pyside6/doc/quickstart.rst
+ sources/pyside6/doc/videos.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/commercial/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/deployment/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/developer/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/extras/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/faq/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/gettingstarted/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/index.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: LGPL-3
+
+Files: sources/pyside6/doc/inheritance_diagram.py
+Copyright: 2010, 2011, the PySide team.
+ 2007-2011, the Sphinx team, see AUTHORS.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/doc/qtattributionsscannertorst.py
+Copyright: 2018, 2022, The Qt Company Ltd.
+License: GPL-2 or GPL-3 or LGPL-3
+
+Files: sources/pyside6/doc/tutorials/basictutorial/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/basictutorial/style.qss
+ sources/pyside6/doc/tutorials/basictutorial/widgetstyling.py
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/doc/tutorials/datavisualize/add_chart.rst
+ sources/pyside6/doc/tutorials/datavisualize/add_mainwindow.rst
+ sources/pyside6/doc/tutorials/datavisualize/add_tableview.rst
+ sources/pyside6/doc/tutorials/datavisualize/filter_data.rst
+ sources/pyside6/doc/tutorials/datavisualize/index.rst
+ sources/pyside6/doc/tutorials/datavisualize/plot_datapoints.rst
+ sources/pyside6/doc/tutorials/datavisualize/read_data.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/debugging/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/expenses/expenses.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/index.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/portingguide/chapter1/chapter1.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/portingguide/chapter2/chapter2.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/portingguide/chapter3/chapter3.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/portingguide/index.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/qmlapp/qmlapplication.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/qmlintegration/qmlintegration.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/doc/tutorials/qmlsqlintegration/qmlsqlintegration.rst
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/pyside6/libpyside/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/libpysideqml/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/plugins/designer/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/plugins/uitools/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/qtexampleicons/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/qtexampleicons/module.c
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/tests/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/QtCore/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/QtCore/bug_829.py
+Copyright: 2022, The Qt Company Ltd.
+ 2011, Thomas Perl <m@thp.io>
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/tests/QtDBus/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/QtDBus/test_dbus.py
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/tests/QtGui/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/QtNetwork/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/QtQml/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/QtQml/bug_814.py
+ sources/pyside6/tests/QtQml/bug_847.py
+Copyright: 2022, The Qt Company Ltd.
+ 2011, Thomas Perl <m@thp.io>
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/tests/QtSql/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/QtStateMachine/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/QtTest/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/QtUiTools/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/QtWidgets/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/pysidetest/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/pyside6/tests/pysidetest/repr_test.py
+Copyright: 2022, The Qt Company Ltd.
+ 2019, Andreas Beckermann
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/pyside6/tests/signals/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/ApiExtractor/CMakeLists.txt
+ sources/shiboken6/ApiExtractor/cmake_uninstall.cmake
+ sources/shiboken6/ApiExtractor/icecc.cmake
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/ApiExtractor/parser/*
+Copyright: 2016, 2020, The Qt Company Ltd.
+ 2002-2005, Roberto Raggi <roberto@kdevelop.org>
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/ApiExtractor/parser/codemodel_enums.h
+ sources/shiboken6/ApiExtractor/parser/enumvalue.cpp
+ sources/shiboken6/ApiExtractor/parser/enumvalue.h
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/ApiExtractor/tests/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/CMakeLists.txt
+ sources/shiboken6/cmake_uninstall.cmake
+ sources/shiboken6/icecc.cmake
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/cmake/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/config.tests/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/data/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/doc/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GFDL-1.3
+
+Files: sources/shiboken6/doc/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/doc/_static/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/doc/_templates/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/doc/_themes/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/doc/_themes/pysidedocs_qthelp/domainindex.html
+Copyright: 2007-2010, the Sphinx team, see AUTHORS.
+License: BSD-2-clause
+
+Files: sources/shiboken6/doc/images/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/doc/scripts/*
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/generator/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/libshiboken/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/shibokenmodule/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/shibokenmodule/files.dir/shibokensupport/signature/PSF-3.7.0.txt
+Copyright: i.e., "2001-2018, Python Software Foundation; All Rights
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/tests/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/dumpcodemodel/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/dumpcodemodel/main.cpp
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/tests/libminimal/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/libother/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/libsample/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/libsample/transform.cpp
+ sources/shiboken6/tests/libsample/transform.h
+Copyright: 2016, The Qt Company Ltd.
+ 2013, Kitware, Inc.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/tests/libsmart/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/minimalbinding/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/otherbinding/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/qtxmltosphinx/*
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/qtxmltosphinx/main.cpp
+Copyright: 2016-2024, The Qt Company Ltd.
+License: GPL-3-EXCEPT or LGPL-3
+
+Files: sources/shiboken6/tests/qtxmltosphinxtest/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/samplebinding/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/smartbinding/CMakeLists.txt
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+Files: sources/shiboken6/tests/test_generator/CMakeLists.txt
+ sources/shiboken6/tests/test_generator/run_test.cmake
+Copyright: 2023, The Qt Company Ltd.
+License: BSD-3-clause
+
+License: Apache-2.0
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ .
+    http://www.apache.org/licenses/LICENSE-2.0
+ .
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ .
+ On Debian systems, the complete text of the Apache license version 2
+ can be found in "/usr/share/common-licenses/Apache-2.0"
+
+License: BSD-2-clause
+ All rights reserved.
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ * Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+ .
+ * Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are
+ met:
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the
+     distribution.
+   * Neither the name of The Qt Company Ltd nor the names of its
+     contributors may be used to endorse or promote products derived
+     from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
+License: GFDL-1.3
+ Documentation contributions included herein are the copyrights of their
+ respective owners. The documentation provided herein is licensed under the
+ terms of the GNU Free Documentation License version 1.3
+ (https://www.gnu.org/licenses/fdl.html) as published by the Free Software
+ Foundation. Qt and respective logos are trademarks of The Qt Company Ltd.
+ in Finland and/or other countries worldwide. All other trademarks are
+ property of their respective owners
+ .
+ On Debian systems, the complete text of the GNU Free Documentation License
+ version 1.3 can be found in
+ "/usr/share/common-licenses/GFDL-1.3"
+
+License: GPL-2
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 2 as
+ published by the Free Software Foundation.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2"
+
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+License: GPL-3
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 3 as
+ published by the Free Software Foundation.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3"
+
+License: GPL-3-EXCEPT
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 3 as
+ published by the Free Software Foundation, annotated with The Qt Company
+ GPL Exception 1.0:
+ .
+ The Qt Company GPL Exception 1.0
+ .
+ Exception 1:
+ .
+ As a special exception you may create a larger work which contains the
+ output of this application and distribute that work under terms of your
+ choice, so long as the work is not otherwise derived from or based on
+ this application and so long as the work does not in itself generate
+ output that contains the output from this application in its original
+ or modified form.
+ .
+ Exception 2:
+ .
+ As a special exception, you have permission to combine this application
+ with Plugins licensed under the terms of your choice, to produce an
+ executable, and to copy and distribute the resulting executable under
+ the terms of your choice. However, the executable must be accompanied
+ by a prominent notice offering all users of the executable the entire
+ source code to this application, excluding the source code of the
+ independent modules, but including any changes you have made to this
+ application, under the terms of this license.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3"
+
+License: LGPL-3
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License version 3 as published by the Free Software Foundation.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
+ USA
+ .
+ On Debian systems, the complete text of the Lesser GNU General
+ Public License version 3 can be found in
+ "/usr/share/common-licenses/LGPL-3"

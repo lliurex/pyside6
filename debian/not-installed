@@ -1,0 +1,8 @@
+
+# there are two copies of all outputs in the package:
+# one in ./build/.../install/ that is in normal FHS format,
+# and another in dist-packages that we don't want
+usr/lib/python*/dist-packages/PySide6/scripts/deploy_lib
+usr/lib/python*/dist-packages/PySide6/include/
+usr/lib/python*/dist-packages/PySide6/libpyside6.*.so.*
+usr/lib/python*/dist-packages/PySide6/libpyside6qml.*.so.*

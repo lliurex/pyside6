@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Remove debian/tests/control
+rm -f debian/tests/control
+
+# Create the basic (import) test for Python 3 modules
+for binary_package in $(dh_listpackages|grep "python3-pyside6.qt"); do
+    module_name=$(echo $binary_package|awk -F. '{print $2}')
+    # find import_name
+    import_name=$(find sources/pyside6/PySide6/ -maxdepth 1 -type d| xargs -n 1 basename|grep -i ^$module_name$)
+    echo "Test-Command: debian/tests/test_install_python3.sh $binary_package PySide6.$import_name
+Depends:
+ python3,
+ $binary_package,
+Restrictions: allow-stderr, superficial
+Features: test-name=$binary_package" >>debian/tests/control
+    architecture=$(sed -n "/^Package: ${binary_package}$/{n; p}" debian/control)
+    if [ "$architecture" != 'Architecture: any' ]; then
+        echo "$architecture" >>debian/tests/control
+    fi
+    echo "" >>debian/tests/control
+done
+
+sed -i '$d' debian/tests/control

@@ -1,0 +1,15 @@
+usr/bin/pyside6-* usr/bin
+usr/bin/shiboken6-genpyi
+usr/lib/python*/dist-packages/PySide6/assistant
+usr/lib/python*/dist-packages/PySide6/designer
+usr/lib/python*/dist-packages/PySide6/linguist
+usr/lib/python*/dist-packages/PySide6/lrelease
+usr/lib/python*/dist-packages/PySide6/lupdate
+usr/lib/python*/dist-packages/PySide6/qmlformat
+usr/lib/python*/dist-packages/PySide6/qmllint
+usr/lib/python*/dist-packages/PySide6/qmlls
+usr/lib/python*/dist-packages/PySide6/Qt/libexec
+usr/lib/python*/dist-packages/PySide6/scripts/
+usr/lib/python*/dist-packages/PySide6/balsa*
+usr/lib/python*/dist-packages/PySide6/qsb
+

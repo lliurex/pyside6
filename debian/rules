@@ -1,0 +1,129 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/default.mk
+
+# Safety measure to ensure package names match SONAMEs
+PYSIDE_MAJOR := $(shell echo $(DEB_VERSION_UPSTREAM) | cut -d. -f1-2)
+ifeq ($(shell awk '/Package:/ {print $$2}' debian/control | grep -- -$(PYSIDE_MAJOR)$$),)
+    $(error Please update package names for major version $(PYSIDE_MAJOR))
+endif
+ifeq ($(shell ls debian/lib* | grep -- -$(PYSIDE_MAJOR)),)
+    $(error Please update files debian/lib*.* for major version $(PYSIDE_MAJOR))
+endif
+
+# don't set PYBUILD_NAME because we want the installed files to land in
+# debian/tmp and then get split up into the feature packages.
+export PYBUILD_SYSTEM = distutils
+
+export MAIN_VERSION_UPSTREAM := $(shell echo $(DEB_VERSION_UPSTREAM))
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+# Add CPPFLAGS to CXXFLAGS as CMake ignores CPPFLAGS by default
+CXXFLAGS+=$(CPPFLAGS)
+
+export LLVM_INSTALL_DIR := $(shell llvm-config --prefix)
+
+# Work around buildd bug (https://bugs.debian.org/842565)
+undefine XDG_RUNTIME_DIR
+
+
+PYBUILD_BUILD_ARGS =
+PYBUILD_INSTALL_ARGS = --reuse-build
+
+## Package compilation options
+
+# 1. if sccache is installed then use it
+
+SCCACHE := $(shell command -v sccache 2> /dev/null)
+
+ifdef SCCACHE
+  SCCACHE_DIR ?= $(HOME)/.cache/sccache
+  export SCCACHE_DIR
+  PYBUILD_BUILD_ARGS += --compiler-launcher=sccache
+execute_before_dh_auto_build:
+	-sccache --start-server
+endif
+
+export DEB_BUILD_OPTIONS=nocheck
+# 2. support 'nocheck' builds - building and running the tests is slow
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+  PYBUILD_BUILD_ARGS += --build-tests
+endif
+export DEB_BUILD_PROFILES=nodoc
+# 3. support 'nodoc' builds - building the docs just needs lots of extra deps
+ifeq ($(filter nodoc,$(DEB_BUILD_PROFILES)),)
+  PYBUILD_BUILD_ARGS += --build-docs
+endif
+
+
+export PYBUILD_BUILD_ARGS
+export PYBUILD_INSTALL_ARGS
+
+
+
+%:
+	dh $@ --buildsystem=pybuild
+
+execute_after_dh_auto_build:
+	# Record build in build index for test runner
+	TODAY=`date -Id`; \
+	mkdir -p build_history/$$TODAY; \
+	echo $$PWD > build_history/$$TODAY/build_dir.txt; \
+	py3versions -d >> build_history/$$TODAY/build_dir.txt \
+
+execute_after_dh_auto_install:
+	# Obtain a list of files built to make it easier to update *.install files.
+	# dh_missing will check all the install files at the end
+	echo ">>> In build"
+	-find build
+	echo ">>> In debian/tmp"
+	-find debian/tmp
+
+override_dh_makeshlibs:
+	dh_makeshlibs -VUpstream-Version
+
+override_dh_installdocs-indep:
+	dh_installdocs -X.doctrees
+	find debian -name __pycache__ -type d -exec rm -rf {} +
+
+override_dh_installexamples-indep:
+	find debian -name __pycache__ -type d -exec rm -rf {} +
+
+execute_after_dh_install-arch:
+	# remove extra copies of documentation
+	rm -rf debian/libshiboken6-py3-*/usr/lib/python*/dist-packages/shiboken6/docs/
+	# remove RUNPATH from libraries and executables
+	# only look at files not symlinks
+	find debian/*/usr/lib/ -name \*.so* -type f -exec chrpath -d {} \;
+	chrpath -d \
+	  debian/*/usr/lib/python3*/dist-packages/PySide6/Qt/libexec/*
+	chrpath -d \
+	  debian/*/usr/lib/python*/dist-packages/PySide6/assistant \
+	  debian/*/usr/lib/python*/dist-packages/PySide6/designer \
+	  debian/*/usr/lib/python*/dist-packages/PySide6/linguist \
+	  debian/*/usr/lib/python*/dist-packages/PySide6/lrelease \
+	  debian/*/usr/lib/python*/dist-packages/PySide6/lupdate \
+	  debian/*/usr/lib/python*/dist-packages/PySide6/qmlformat \
+	  debian/*/usr/lib/python*/dist-packages/PySide6/qmllint \
+	  debian/*/usr/lib/python*/dist-packages/PySide6/qmlls \
+	  debian/*/usr/lib/python*/dist-packages/shiboken6_generator/shiboken6
+
+	# remove executable permissions
+	find debian/pyside6-tools/usr/lib/python3*/dist-packages/PySide6/scripts/ -type f -exec chmod a-x {} +
+
+	# fix up various paths in .pc, cmake and __init__.py
+	debian/set-paths
+
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+ifeq (mips64el,$(DEB_HOST_ARCH))
+	# See https://bugs.debian.org/868745
+	PIP_BREAK_SYSTEM_PACKAGES=1 \
+	QSG_NO_DEPTH_BUFFER=1 xvfb-run -a dh_auto_test -- --system=custom \
+		--test-args '{interpreter} testrunner.py test --buildno=-1'
+else
+	PIP_BREAK_SYSTEM_PACKAGES=1 \
+	QTWEBENGINE_CHROMIUM_FLAGS="--disable-gpu --no-sandbox" \
+	xvfb-run -a dh_auto_test -- --system=custom \
+		--test-args '{interpreter} testrunner.py test --buildno=-1'
+endif
+endif

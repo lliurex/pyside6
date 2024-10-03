@@ -1,0 +1,3 @@
+duplicate-files *
+# will probably come back with some later doc changes
+#repeated-path-segment *

@@ -1,0 +1,11 @@
+source-is-missing [examples/widgets/richtext/textedit/example.html]
+
+# binary files
+very-long-line-length-in-source-file * [examples/graphs/widgetgallery/data/*.mesh:*]
+very-long-line-length-in-source-file * [examples/gui/rhiwindow/shaders/prebuilt/*.qsb:*]
+
+# text files
+very-long-line-length-in-source-file * [.QT-ENTERPRISE-LICENSE-AGREEMENT:*]
+very-long-line-length-in-source-file * [examples/widgets/richtext/textedit/example.html:*]
+very-long-line-length-in-source-file * [sources/pyside6/doc/_themes/pysidedocs_qthelp/static/pyside.css:*]
+very-long-line-length-in-source-file * [sources/shiboken6/doc/_themes/pysidedocs_qthelp/static/pyside.css:*]

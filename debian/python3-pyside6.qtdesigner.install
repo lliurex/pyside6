@@ -1,0 +1,3 @@
+build/qfp-*/install/lib/*/qt6/plugins/designer/libPySidePlugin.so usr/lib/${DEB_HOST_MULTIARCH}/qt6/plugins/designer/
+usr/lib/python3*/dist-packages/PySide6/QtDesigner.*.so usr/lib/python3/dist-packages/PySide6
+usr/lib/python3*/dist-packages/PySide6/QtDesigner.pyi usr/lib/python3/dist-packages/PySide6

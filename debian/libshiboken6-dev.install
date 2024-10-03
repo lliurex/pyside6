@@ -1,0 +1,4 @@
+build/qfp-*/install/include/shiboken6 usr/include
+build/qfp-*/install/lib/cmake/Shiboken6* usr/lib/${DEB_HOST_MULTIARCH}/cmake
+build/qfp-*/install/lib/libshiboken6*.so usr/lib/${DEB_HOST_MULTIARCH}
+build/qfp-*/install/lib/pkgconfig/shiboken6.pc usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig

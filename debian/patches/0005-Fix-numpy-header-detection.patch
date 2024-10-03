@@ -1,0 +1,29 @@
+From: Stuart Prescott <stuart@debian.org>
+Date: Tue, 7 May 2024 10:06:59 +1000
+Subject: Fix numpy header detection
+
+Existing code makes assumptions about site-packages/dist-packages
+and fails to find the headers; numpy has an explicit function for this
+---
+ build_scripts/utils.py | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/build_scripts/utils.py b/build_scripts/utils.py
+index 1ee3e39..e870fb2 100644
+--- a/build_scripts/utils.py
++++ b/build_scripts/utils.py
+@@ -68,12 +68,8 @@ def update_env_path(newpaths):
+ 
+ 
+ def get_numpy_location():
+-    for p in sys.path:
+-        if 'site-' in p:
+-            numpy = Path(p).resolve() / 'numpy'
+-            if numpy.is_dir():
+-                return os.fspath(numpy / 'core' / 'include')
+-    return None
++    import numpy
++    return numpy.get_include()
+ 
+ 
+ def platform_cmake_options(as_tuple_list=False):

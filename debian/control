@@ -1,0 +1,1169 @@
+Source: pyside6
+Section: python
+Priority: optional
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders:
+ Kurt Kremitzki <kkremitzki@debian.org>,
+ Stuart Prescott <stuart@debian.org>,
+Build-Depends:
+ chrpath,
+ clang,
+ cmake (>= 3.1),
+ debhelper-compat (= 13),
+ dh-python,
+ dh-sequence-python3,
+ dh-sequence-sphinxdoc,
+ furo <!nodoc>,
+ libclang-dev,
+ libqt6quick3dglslparser6 (>= 6.6),
+ libqt6waylandclient6 (>= 6.6),
+ libqt6waylandcompositor6 (>= 6.6),
+ libqt6wlshellintegration6 (>= 6.6),
+ libxml2-dev,
+ libxslt1-dev,
+ llvm-dev,
+ mesa-vulkan-drivers <!nocheck>,
+ ninja-build,
+# nuitka <!nocheck>,   test-dep that isn't in testing
+ patchelf,
+ python3-dev,
+ python3-distro,
+ python3-numpy,
+ python3-opengl,
+ python3-packaging,
+ python3-pip <!nocheck>,
+ python3-pkginfo <!nocheck>,
+ python3-myst-parser <!nodoc>,
+ python3-setuptools,
+ python3-sphinx <!nodoc>,
+ python3-sphinx-copybutton <!nodoc>,
+ python3-sphinx-design <!nodoc>,
+ python3-sphinxcontrib.qthelp <!nodoc>,
+ python3-wheel,
+ qml6-module-qtqml-workerscript (>= 6.6),
+ qml6-module-qtquick (>= 6.6),
+ qml6-module-qtquick-controls (>= 6.6),
+ qml6-module-qtquick-layouts (>= 6.6),
+ qml6-module-qtquick-templates (>= 6.6),
+ qml6-module-qtquick-window (>= 6.6),
+ qt6-3d-dev (>= 6.6),
+ qt6-base-dev (>= 6.6),
+ qt6-base-private-dev (>= 6.6),
+ qt6-charts-dev (>= 6.6),
+ qt6-connectivity-dev (>= 6.6) [linux-any],
+ qt6-datavisualization-dev (>= 6.6),
+ qt6-declarative-dev (>= 6.6),
+ qt6-declarative-private-dev (>= 6.6),
+# qt6-graphs-dev (>= 6.6),
+ qt6-httpserver-dev (>= 6.6),
+ qt6-location-dev (>= 6.6),
+ qt6-multimedia-dev (>= 6.6),
+ qt6-networkauth-dev (>= 6.6),
+ qt6-pdf-dev (>= 6.6) [amd64 arm64 armhf i386],
+ qt6-positioning-dev (>= 6.6),
+ qt6-qmllint-plugins (>= 6.6),
+ qt6-qmltooling-plugins (>= 6.6),
+ qt6-quick3d-dev (>= 6.6),
+ qt6-remoteobjects-dev (>= 6.6),
+ qt6-scxml-dev (>= 6.6),
+ qt6-sensors-dev (>= 6.6),
+ qt6-serialbus-dev (>= 6.6),
+ qt6-serialport-dev (>= 6.6),
+ qt6-shadertools-dev (>= 6.6),
+ qt6-speech-dev (>= 6.6),
+ qt6-svg-dev (>= 6.6),
+ qt6-tools-dev (>= 6.6),
+ qt6-translations-l10n (>= 6.6),
+ qt6-wayland (>= 6.6),
+ qt6-webchannel-dev (>= 6.6),
+ qt6-webengine-dev (>= 6.6) [amd64 arm64 armhf i386],
+ qt6-websockets-dev (>= 6.6),
+ qtchooser,
+ sip-tools (>= 6.5),
+ xauth <!nocheck>,
+ xvfb <!nocheck>,
+Build-Conflicts:
+ libpyside6-dev,
+ libshiboken6-dev,
+Rules-Requires-Root: no
+Standards-Version: 4.7.0
+Homepage: https://wiki.qt.io/Qt_for_Python
+Vcs-Git: https://salsa.debian.org/qt-kde-team/qt6/pyside6.git
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/qt6/pyside6
+
+Package: libpyside6-dev
+Section: libdevel
+Architecture: any
+Depends:
+ libpyside6-py3-6.7 (= ${binary:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 (development files)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package provides the development headers for the libpyside6 library.
+
+Package: libpyside6-py3-6.7
+Section: libs
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Conflicts:
+ libpyside6-py3-6.2,
+ libpyside6-py3-6.4,
+ libpyside6-py3-6.6,
+Replaces:
+ libpyside6-py3-6.2,
+ libpyside6-py3-6.4,
+ libpyside6-py3-6.6,
+Provides:
+ libpyside6-py3,
+Description: Python 3 bindings for Qt 6 (base files)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python3 base file used by all modules.
+
+Package: libshiboken6-dev
+Section: libdevel
+Architecture: any
+Depends:
+ libshiboken6-py3-6.7 (= ${binary:Version}),
+ python3-dev,
+ shiboken6 (= ${source:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: CPython bindings generator for C++ libraries (development files)
+ Shiboken6 is a bindings generator for C++ libraries that outputs CPython
+ source code. It collects information from library headers, and then
+ merges modifications and handwritten code defined in the typesystem
+ description.
+ .
+ Shiboken6 is the binding generator used to create the PySide6 bindings.
+ .
+ This package provides the development headers for the libshiboken6 library.
+
+Package: libshiboken6-py3-6.7
+Section: libs
+Architecture: any
+Depends:
+ python3,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Conflicts:
+ libshiboken6-py3-6.2,
+ libshiboken6-py3-6.4,
+ libshiboken6-py3-6.6,
+Replaces:
+ libshiboken6-py3-6.2,
+ libshiboken6-py3-6.4,
+ libshiboken6-py3-6.6,
+Provides:
+ libshiboken6-py3,
+Description: CPython bindings generator for C++ libraries (Python3 shared library)
+ Shiboken6 is a bindings generator for C++ libraries that outputs CPython
+ source code. It collects information from library headers, and then
+ merges modifications and handwritten code defined in the typesystem
+ description.
+ .
+ Shiboken6 is the binding generator used to create the PySide6 bindings.
+ .
+ This package contains the shared Python 3 library used by shiboken6.
+
+Package: pyside6-tools
+Architecture: any
+Section: devel
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: development tools for PySide6 (lupdate)
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ PySide6 ships Python bindings for the Qt 6 framework. This package ships
+ the following accompanying tools:
+  * pyside6-lupdate - update Qt Linguist translation files for PySide
+
+Package: python-pyside6-doc
+Architecture: all
+Section: doc
+Depends:
+ ${misc:Depends},
+ ${sphinxdoc:Depends},
+Multi-Arch: foreign
+Description: Python bindings for Qt 6 (common documentation)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the common documentation package.
+
+Package: python3-pyside6.qt3danimation
+Architecture: any
+Depends:
+ python3-pyside6.qt3dcore,
+ python3-pyside6.qt3drender,
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtnetwork,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 3DAnimation module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the Qt3DAnimation module.
+
+Package: python3-pyside6.qt3dcore
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtnetwork,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 3DCore module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the Qt3DCore module.
+
+Package: python3-pyside6.qt3dextras
+Architecture: any
+Depends:
+ python3-pyside6.qt3dcore,
+ python3-pyside6.qt3drender,
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtnetwork,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 3DExtras module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the Qt3DExtras module.
+
+Package: python3-pyside6.qt3dinput
+Architecture: any
+Depends:
+ python3-pyside6.qt3dcore,
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 3DInput module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the Qt3DInput module.
+
+Package: python3-pyside6.qt3dlogic
+Architecture: any
+Depends:
+ python3-pyside6.qt3dcore,
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 3DLogic module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the Qt3DLogic module.
+
+Package: python3-pyside6.qt3drender
+Architecture: any
+Depends:
+ python3-pyside6.qt3dcore,
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 3DRender module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the Qt3DRender module.
+
+Package: python3-pyside6.qtasyncio
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 ASyncIO (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtAsyncio module.
+
+Package: python3-pyside6.qtbluetooth
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Bluetooth (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtBluetooth module.
+
+Package: python3-pyside6.qtcharts
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Charts module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtCharts module.
+
+Package: python3-pyside6.qtconcurrent
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Concurrent module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtConcurrent module.
+
+Package: python3-pyside6.qtcore
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Suggests:
+ python-pyside6-doc,
+Description: Python bindings for Qt 6 core module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtCore module.
+
+Package: python3-pyside6.qtdatavisualization
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Data Visualization (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtDataVisualization module.
+
+Package: python3-pyside6.qtdbus
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 DBus (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtDBus module.
+
+Package: python3-pyside6.qtdesigner
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Desginer (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtDesigner module.
+
+Package: python3-pyside6.qtgui
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Gui module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtGui module.
+
+Package: python3-pyside6.qthelp
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Help module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtHelp module.
+
+Package: python3-pyside6.qthttpserver
+Architecture: any
+Depends:
+ python3-pyside6.qtconcurrent,
+ python3-pyside6.qtcore,
+ python3-pyside6.qtnetwork,
+ python3-pyside6.qtwebsockets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 HttpServer (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtHttpServer module.
+
+Package: python3-pyside6.qtmultimedia
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtnetwork,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Multimedia module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtMultimedia module.
+
+Package: python3-pyside6.qtmultimediawidgets
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtmultimedia,
+ python3-pyside6.qtnetwork,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 MultimediaWidgets module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtMultimediaWidgets module.
+
+Package: python3-pyside6.qtlocation
+Architecture: any
+Depends: ${misc:Depends}, ${python3:Depends}, ${shlibs:Depends},
+ python3-pyside6.qtcore, python3-pyside6.qtpositioning
+Description: Python bindings for Qt 6 Location module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtLocation module.
+
+Package: python3-pyside6.qtnetwork
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Network module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtNetwork module.
+
+Package: python3-pyside6.qtnetworkauth
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtnetwork,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 NetworkAuth (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtNetworkAuth module.
+
+Package: python3-pyside6.qtnfc
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 NFC (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtNfc module.
+
+Package: python3-pyside6.qtopengl
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 OpenGL module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtOpenGL module.
+
+Package: python3-pyside6.qtopenglwidgets
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 OpenGLWidgets module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtOpenGLWidgets module.
+
+Package: python3-pyside6.qtpdf
+Architecture: amd64 arm64 armhf i386
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 PDF module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtPdf module.
+
+Package: python3-pyside6.qtpdfwidgets
+Architecture: amd64 arm64 armhf i386
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtpdf,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 PDF Widgets module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtPdfWidgets module.
+
+Package: python3-pyside6.qtpositioning
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Positioning module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtPositioning module.
+
+Package: python3-pyside6.qtprintsupport
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 PrintSupport module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtPrintSupport module.
+
+Package: python3-pyside6.qtqml
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtnetwork,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Qml module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtQml module.
+
+Package: python3-pyside6.qtquick
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtnetwork,
+ python3-pyside6.qtopengl,
+ python3-pyside6.qtqml,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Quick module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtQuick module.
+
+Package: python3-pyside6.qtquick3d
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtqml,
+ python3-pyside6.qtquick,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Quick3D (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtQuick3D module.
+
+Package: python3-pyside6.qtquickcontrols2
+Architecture: any
+Depends:
+ python3-pyside6.qtquick,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 QuickControls2 (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtQuickControls2 module.
+
+Package: python3-pyside6.qtquicktest
+Architecture: any
+Depends:
+ python3-pyside6.qtquick,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 QuickTest (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtQuickTest module.
+
+Package: python3-pyside6.qtexampleicons
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 QuickExampleIcons (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtExampleIcons module.
+
+Package: python3-pyside6.qtquickwidgets
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtnetwork,
+ python3-pyside6.qtqml,
+ python3-pyside6.qtquick,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 QuickWidgets module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtQuickWidgets module.
+
+Package: python3-pyside6.qtremoteobjects
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtnetwork,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 RemoteObjects (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtRemoteObjects module.
+
+Package: python3-pyside6.qtscxml
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Scxml (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the Scxml module.
+
+Package: python3-pyside6.qtsensors
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Sensors module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtSensors module.
+
+Package: python3-pyside6.qtserialbus
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtnetwork,
+ python3-pyside6.qtserialport,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 SerialBus (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtSerialBus module.
+
+Package: python3-pyside6.qtserialport
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 SerialPort (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtSerialPort module.
+
+Package: python3-pyside6.qtspatialaudio
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtmultimedia,
+ python3-pyside6.qtnetwork,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Spatial Audio (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtSpatialAudio module.
+
+Package: python3-pyside6.qtsql
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Sql module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtSql module.
+
+Package: python3-pyside6.qtstatemachine
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 State Machine (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtStateMachine module.
+
+Package: python3-pyside6.qtsvg
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Svg module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtSvg module.
+
+Package: python3-pyside6.qtsvgwidgets
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtsvg,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 SvgWidgets module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtSvgWidgets module.
+
+Package: python3-pyside6.qttest
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Test module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtTest module.
+
+Package: python3-pyside6.qttexttospeech
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 TextToSpeech module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtTextToSpeech module.
+
+Package: python3-pyside6.qtuitools
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtwidgets,
+ python3-pyside6.qtxml,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 UiTools module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtUiTools module.
+
+Package: python3-pyside6.qtwebchannel
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 WebChannel module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtWebChannel module.
+
+Package: python3-pyside6.qtwebenginecore
+Architecture: amd64 arm64 armhf i386
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtnetwork,
+ python3-pyside6.qtprintsupport,
+ python3-pyside6.qtwebchannel,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 WebEngineCore module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtWebEngineCore module.
+
+Package: python3-pyside6.qtwebenginequick
+Architecture: amd64 arm64 armhf i386
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtnetwork,
+ python3-pyside6.qtqml,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 WebEngineQuick module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtWebEnginequick module.
+
+Package: python3-pyside6.qtwebenginewidgets
+Architecture: amd64 arm64 armhf i386
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ python3-pyside6.qtnetwork,
+ python3-pyside6.qtprintsupport,
+ python3-pyside6.qtwebchannel,
+ python3-pyside6.qtwebenginecore,
+ python3-pyside6.qtwidgets,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 WebEngineWidgets module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtWebEngineWidgets module.
+
+Package: python3-pyside6.qtwebsockets
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtnetwork,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 WebSockets module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtWebSockets module.
+
+Package: python3-pyside6.qtwidgets
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ python3-pyside6.qtgui,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Widgets module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtWidgets module.
+
+Package: python3-pyside6.qtxml
+Architecture: any
+Depends:
+ python3-pyside6.qtcore,
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+Description: Python bindings for Qt 6 Xml module (Python 3)
+ pyside6 provides Python bindings for Qt 6.x framework.
+ .
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains Python 3 bindings for the QtXml module.
+
+Package: shiboken6
+Section: devel
+Architecture: all
+Depends:
+ python3,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: CPython bindings generator for C++ libraries
+ Shiboken6 is a bindings generator for C++ libraries that outputs CPython
+ source code. It collects information from library headers, and then
+ merges modifications and handwritten code defined in the typesystem
+ description.
+ .
+ Shiboken6 is the binding generator used to create the PySide6 bindings.
+
+Package: shiboken6-doc
+Architecture: all
+Section: doc
+Depends:
+ ${misc:Depends},
+ ${sphinxdoc:Depends},
+Multi-Arch: foreign
+Description: CPython bindings generator for C++ libraries (common documentation)
+ Shiboken6 is a bindings generator for C++ libraries that outputs CPython
+ source code. It collects information from library headers, and then
+ merges modifications and handwritten code defined in the typesystem
+ description.
+ .
+ Shiboken6 is the binding generator used to create the PySide6 bindings.
+ .
+ This package contains the common documentation.

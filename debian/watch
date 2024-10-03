@@ -1,0 +1,2 @@
+version=4
+https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-([\d\.]+)-src/ pyside-setup-.*-src-@ANY_VERSION@@ARCHIVE_EXT@

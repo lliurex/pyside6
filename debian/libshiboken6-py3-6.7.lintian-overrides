@@ -1,0 +1,2 @@
+# We ship compiled versions for each supported python3 version, with a symlink to the default version
+package-name-doesnt-match-sonames *

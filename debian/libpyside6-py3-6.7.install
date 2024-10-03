@@ -1,0 +1,12 @@
+build/qfp-*/install/lib/libpyside6*.so.*            usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/python*/dist-packages/PySide6-*-info/
+usr/lib/python*/dist-packages/PySide6/__init__.py
+usr/lib/python*/dist-packages/PySide6/__feature__.pyi
+usr/lib/python*/dist-packages/PySide6/py.typed
+usr/lib/python*/dist-packages/PySide6/_config.py
+usr/lib/python*/dist-packages/PySide6/_git_pyside_version.py
+usr/lib/python*/dist-packages/PySide6/support/
+usr/lib/python*/dist-packages/PySide6/typesystems
+usr/lib/python*/dist-packages/PySide6/glue
+usr/lib/python*/dist-packages/PySide6/Qt/modules/*.json
+usr/lib/python*/dist-packages/PySide6/Qt/lib/*/qt6/metatypes/*.json

@@ -1,0 +1,3 @@
+build/qfp-*/install/lib/libshiboken6*.so.* usr/lib/${DEB_HOST_MULTIARCH}
+build/qfp-*/install/lib/python3*/dist-packages/shiboken6* usr/lib/python3/dist-packages/
+usr/lib/python*/dist-packages/shiboken6*

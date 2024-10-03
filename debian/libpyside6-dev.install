@@ -1,0 +1,6 @@
+build/qfp*/install/include/PySide6 usr/include
+build/qfp*/install/lib/cmake/PySide6* usr/lib/${DEB_HOST_MULTIARCH}/cmake
+build/qfp-*/install/lib/libpyside6*.so usr/lib/${DEB_HOST_MULTIARCH}
+build/qfp-*/install/lib/pkgconfig/pyside6.pc usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig
+build/qfp-*/install/share/PySide6 usr/share
+usr/lib/python*/dist-packages/PySide6/include/ usr/

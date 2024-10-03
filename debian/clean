@@ -1,0 +1,6 @@
+build_history/2*/
+pyside3_build/
+pyside3_install/
+sources/pyside2/doc/pyside-config.qdocconf
+sources/pyside2/doc/pyside.qdocconf.in
+sources/pyside2/doc/qtmodules/pyside-*.qdocconf

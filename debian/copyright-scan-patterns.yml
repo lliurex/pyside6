@@ -1,0 +1,37 @@
+---
+check:
+  pattern:
+  - debian/
+  suffixes:
+  - qml
+  - cpp
+  - h
+ignore:
+  pattern:
+  - .flake8
+  - .gitattributes
+  - .pyproject
+  - .travis.yml
+  - .vscode
+  - .QT-ENTERPRISE-LICENSE-AGREEMENT
+  - COPYING
+  - LICENSES
+  - README*
+  - coin/.*.yaml
+  - requirements.*txt
+  - qt_attribution.json
+  suffixes:
+  - desktop
+  - icns
+  - ico
+  - jpg
+  - mesh
+  - mo
+  - png
+  - svg
+  - svgz
+  - pyc
+  - qm
+  - qrc
+  - qsb
+  - webp

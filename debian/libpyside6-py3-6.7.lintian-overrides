@@ -1,0 +1,3 @@
+# We ship compiled versions for each supported python3 version, with a symlink to the default version
+package-name-doesnt-match-sonames *
+repeated-path-segment lib [usr/lib/python3/dist-packages/PySide6/Qt/lib/]

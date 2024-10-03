@@ -1,0 +1,9 @@
+# Packaging TODO for pyside6
+
+ - check arch-restrictions on some packages / build-deps
+
+ - check that share/ and libexec/ resources are found and work
+
+ - write control from control.in? (version constraints, versioned package names)
+
+ - should libexec be in an arch-tuple directory? how?

@@ -1,0 +1,182 @@
+#!/usr/bin/python3
+"""
+Check the dependencies of the set of packages in the split pyside package
+layout.
+
+Usage:
+  check-deps ../build-area/pyside6_6.X.Y-Z_amd64.changes
+"""
+# Copyright (c) 2024 Stuart Prescott <stuart@debian.org>
+#
+# Part of the Debian packaging for PySide6
+# Available under GPL-2+ or LGPL-3 - see debian/copyright
+
+
+from dataclasses import dataclass
+from pathlib import Path
+import re
+import sys
+
+from debian.deb822 import Changes, Packages
+from debian.debfile import DebFile
+
+
+MODULE_NAME = "PySide6"
+
+# Files to inspect and what to look for in them
+MODULE_PATTERN = re.compile(r"(?:.|/|)usr/lib/python3.*/dist-packages/(.*)\.pyi?")
+IMPORT_PATTERN = re.compile(rf"^\s*import ({MODULE_NAME}\..*)")
+
+
+@dataclass
+class Module:
+    """Details of a Python module and its imports"""
+
+    name: str
+    filename: str
+    imports: list[str]
+
+
+@dataclass
+class Package:
+    """Details of a Debian package, its Python modules and dependencies"""
+
+    name: str
+    filename: str
+    modules: list[Module]
+    depends: list[str]
+
+
+def load_changes(changes_filename: Path | str) -> list[Package]:
+    """obtain details of the .deb packages referenced from a .changes file"""
+    packages: list[Package] = []
+    with open(changes_filename, encoding="UTF-8") as fh:
+        changes = Changes(fh.readlines())
+        files = changes["Files"]
+        for f in files:
+            if f["name"].endswith(".deb"):
+                packages.append(
+                    Package(
+                        # assume that the filenames are in standard format of
+                        # package_{version}_{arch}.deb to get the package name
+                        name=f["name"].partition("_")[0],
+                        filename=f["name"],
+                        # the following to be filled in later
+                        modules=[],
+                        depends=[],
+                    )
+                )
+    return packages
+
+
+def inspect_packages(base_path: Path, packages: list[Package]) -> None:
+    """inspect each .deb for Python modules and dependencies"""
+    for p in packages:
+        # debian.debfile.DebFile object for read-only inspection of .deb
+        df = DebFile(base_path / p.filename)
+
+        # inspect the DEBIAN/control file to find dependencies
+        control = Packages(df.debcontrol())
+        rels = control.relations["depends"]
+        for r in rels:  # type: ignore
+            # Simplify the analysis here:
+            # - only look at Python module dependencies, that by policy
+            #   are going to be in `python3-foo` packages
+            # - just consider the first dep of the group since these are
+            #   Python module deps that don't come with alternate versions
+            depname = r[0]["name"]
+            if depname.startswith("python3-"):
+                p.depends.append(depname)
+
+        # inspect the DEBIAN/md5sums to get the file list for the package
+        # this could also be obtained from the TarFile object from the
+        # DebData part rather than the DebControl part
+        hashes = df.md5sums(encoding="UTF-8")
+        for fname in hashes.keys():
+            # Only look at Python module files
+            if fn_match := MODULE_PATTERN.match(fname):
+                # Turn the filename back into a module name - this doesn't
+                # work that well in general but is ok for PySide6 split
+                # packages.
+                module = Module(fn_match.group(1).replace("/", "."), fname, [])
+
+                # Inspect the file contents to look for `import` statements.
+                # This is only looking at `import foo` statements not
+                # alternate forms such as `from foo import bar` or
+                # `import foo, bar`; for PySide6 this is OK because we only
+                # care about the automatically generated imports that are
+                # are all of the `import foo` form.
+                # (This could be rewritten to walk the ast, perhaps?)
+                pyfile = df.data.get_content(fname, encoding="UTF-8")
+                if pyfile is None:
+                    continue
+                for line in pyfile.splitlines():
+                    if imp_match := IMPORT_PATTERN.match(line):
+                        module.imports.append(imp_match.group(1))
+
+                # Record the information about the Python module and its imports
+                p.modules.append(module)
+
+
+def check_deps(packages: list[Package]) -> list[tuple[str, str]]:
+    """check that declared dependencies match the `import` statements in modules
+
+    Note: transitive dependencies are not checked here - the packaging
+    should not rely on transitive dependencies but instead be explicit.
+    """
+    # Start by making a LUT of the module names to map to the packages
+    modules = {}
+    for p in packages:
+        for m in p.modules:
+            modules[m.name] = p
+
+    # Check each package to look for `import` statements that rely on
+    # packages for which there is no Depends
+    missing: list[tuple[str, str]] = []
+    for p in packages:
+        for m in p.modules:
+            for i in m.imports:
+                mod_pkg = modules[i]
+                # Look in the package Depends, excluding self-deps
+                if mod_pkg.name not in p.depends and mod_pkg.name != p.name:
+                    missing.append((p.name, mod_pkg.name))
+    return missing
+
+
+def dump(packages: list[Package]) -> None:
+    """pretty print the list of Package data"""
+    for p in packages:
+        module_details = "        \n".join(
+            f"{m.name} imports {m.imports}" for m in p.modules
+        )
+        print(
+            f"""\
+{p.name}
+    {p.filename}
+    modules:
+        {module_details}
+    depends:
+        {p.depends}
+"""
+        )
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: check-deps foo.changes")
+        sys.exit(1)
+
+    changes_filepath = Path(sys.argv[1])
+
+    # load data
+    packages_data = load_changes(changes_filepath)
+    base = changes_filepath.parent
+    inspect_packages(base, packages_data)
+
+    # dump findings
+    dump(packages_data)
+
+    # check
+    missing_deps = check_deps(packages_data)
+    for package, missing_dep in missing_deps:
+        print(f"MISSING: {package} Depends: {missing_dep}")

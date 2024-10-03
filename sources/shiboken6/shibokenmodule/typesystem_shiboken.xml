@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<!--
+// Copyright (C) 2024 The Qt Company Ltd.
+// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+-->
+<typesystem package="Shiboken">
+    <primitive-type name="bool" />
+    <primitive-type name="unsigned long" />
+    <primitive-type name="size_t" />
+    <add-function signature="isValid(PyObject*)" return-type="bool">
+        <inject-code file="shibokenmodule.cpp" snippet="isvalid"/>
+    </add-function>
+
+    <add-function signature="invalidate(PyObject*)">
+        <inject-code>
+            Shiboken::Object::invalidate(%1);
+        </inject-code>
+    </add-function>
+
+    <add-function signature="wrapInstance(size_t, PyTypeObject)" return-type="PyObject*">
+        <inject-code file="shibokenmodule.cpp" snippet="wrapinstance"/>
+    </add-function>
+
+   <add-function signature="getCppPointer(PyObject*)" return-type="PySequence*">
+        <inject-code file="shibokenmodule.cpp" snippet="getcpppointer"/>
+   </add-function>
+
+   <add-function signature="delete(PyObject*)">
+        <inject-code file="shibokenmodule.cpp" snippet="delete"/>
+   </add-function>
+
+    <add-function signature="ownedByPython(PyObject*)" return-type="bool">
+        <inject-code file="shibokenmodule.cpp" snippet="ownedbypython"/>
+    </add-function>
+
+    <add-function signature="createdByPython(PyObject*)" return-type="bool">
+        <inject-code file="shibokenmodule.cpp" snippet="createdbypython"/>
+    </add-function>
+
+    <add-function signature="disassembleFrame(PyObject*)" return-type="PyObject">
+        <inject-code file="shibokenmodule.cpp" snippet="disassembleframe"/>
+    </add-function>
+
+    <add-function signature="dump(PyObject*)" return-type="const char *">
+        <inject-code file="shibokenmodule.cpp" snippet="dump"/>
+    </add-function>
+
+    <add-function signature="getAllValidWrappers(void)" return-type="PySequence*">
+        <inject-code file="shibokenmodule.cpp" snippet="getallvalidwrappers"/>
+    </add-function>
+
+    <add-function signature="dumpTypeGraph(const char *@fileName@)" return-type="bool">
+        <inject-code file="shibokenmodule.cpp" snippet="dumptypegraph"/>
+    </add-function>
+
+    <add-function signature="dumpWrapperMap()">
+        <inject-code file="shibokenmodule.cpp" snippet="dumpwrappermap"/>
+    </add-function>
+
+    <extra-includes>
+        <include file-name="sbkversion.h" location="local"/>
+        <include file-name="voidptr.h" location="local"/>
+    </extra-includes>
+     <inject-code position="end" file="shibokenmodule.cpp" snippet="init"/>
+</typesystem>

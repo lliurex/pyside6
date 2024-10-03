@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# This script is to:
+# - remove build paths from the config
+# - set file paths pointing to the FHS locations in the packages
+
+package="libshiboken6-dev"
+
+# Fix up cmake variables
+for directory in "cmake/Shiboken6"; do
+    sed -i "
+        s|\"\${PACKAGE_PREFIX_DIR}/lib\"|/usr/lib/$DEB_HOST_MULTIARCH|;
+        s|\${PACKAGE_PREFIX_DIR}|/usr|;
+        s|\${_IMPORT_PREFIX}/lib|\${_IMPORT_PREFIX}/$DEB_HOST_MULTIARCH|;
+        s|\${_IMPORT_PREFIX}/include|\${_IMPORT_PREFIX}/../include|;
+        s|\${_IMPORT_PREFIX}/bin|\${_IMPORT_PREFIX}/../bin|;
+        s|^set_and_check(PYSIDE_PYTHONPATH.*|set_and_check(PYSIDE_PYTHONPATH \"/usr/lib/python3/dist-packages/PySide6\")|;
+    " \
+    debian/$package/usr/lib/$DEB_HOST_MULTIARCH/$directory/*
+done
+
+# Fix up pkgconfig files
+sed -i "
+    s|prefix=.*|prefix=/usr| ;
+    s|exec_prefix=.*|exec_prefix=\${prefix}| ;
+    s|libdir=.*|libdir=\${exec_prefix}/lib/$DEB_HOST_MULTIARCH|;
+    s|includedir=.*|includedir=\${exec_prefix}/include/shiboken6|;
+    " \
+    debian/libshiboken6-dev/usr/lib/*/pkgconfig/shiboken6.pc
+
+# Fix up python __init__.py
+sed -i "s|in_build = Path.*|in_build = False|" debian/*/usr/lib/python*/dist-packages/PySide6/__init__.py
+
+
+package="libpyside6-dev"
+
+# Fix up cmake variables
+for directory in "cmake/PySide6" "cmake/PySide6Qml"; do
+    sed -i "
+        s|\${PACKAGE_PREFIX_DIR}|/usr|;
+        s|\${_IMPORT_PREFIX}/lib|\${_IMPORT_PREFIX}/$DEB_HOST_MULTIARCH|;
+        s|^set_and_check(PYSIDE_PYTHONPATH.*|set_and_check(PYSIDE_PYTHONPATH \"/usr/lib/python3/dist-packages/PySide6\")|;
+    " \
+    debian/$package/usr/lib/$DEB_HOST_MULTIARCH/$directory/*
+done
+
+# Fix up pkgconfig files
+sed -i "
+    s|prefix=.*|prefix=/usr| ;
+    s|exec_prefix=.*|exec_prefix=\${prefix}| ;
+    s|libdir=.*|libdir=\${exec_prefix}/lib/$DEB_HOST_MULTIARCH|;
+    s|includedir=.*|includedir=\${exec_prefix}/include/PySide6|;
+    s|typesystemdir=.*|typesystemdir=\${exec_prefix}/share/PySide6/typesystems|;
+    s|gluedir=.*|gluedir=\${exec_prefix}/share/PySide6/glue|;
+    s|pythonpath=.*|pythonpath=\${exec_prefix}/lib/python3/dist-packages|;
+    " \
+    debian/libpyside6-dev/usr/lib/*/pkgconfig/pyside6.pc
