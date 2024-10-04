@@ -1,5 +1,4 @@
 0001-test-with-current-interpreter.patch
-0002-disable-qtexampleicons.patch
 0003-Fix-missing-subparser-in-test-harness.patch
 0004-Add-failing-tests-to-blacklist.patch
 0005-Fix-numpy-header-detection.patch
