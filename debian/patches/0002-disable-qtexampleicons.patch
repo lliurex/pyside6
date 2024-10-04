@@ -6,13 +6,13 @@ Subject: disable-qtexampleicons
  sources/pyside6/CMakeLists.txt | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/sources/pyside6/CMakeLists.txt b/sources/pyside6/CMakeLists.txt
-index f45c071..fbb55a6 100644
---- a/sources/pyside6/CMakeLists.txt
-+++ b/sources/pyside6/CMakeLists.txt
+Index: pyside6/sources/pyside6/CMakeLists.txt
+===================================================================
+--- pyside6.orig/sources/pyside6/CMakeLists.txt
++++ pyside6/sources/pyside6/CMakeLists.txt
 @@ -42,4 +42,4 @@ endif()
  
  add_subdirectory(doc)
  
 -add_subdirectory(qtexampleicons)
-+# add_subdirectory(qtexampleicons)
++#add_subdirectory(qtexampleicons)

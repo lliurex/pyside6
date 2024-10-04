@@ -7,10 +7,10 @@ Not needed in the build but needed for debugging the test harness...
  testing/command.py | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/testing/command.py b/testing/command.py
-index 31a48f8..859ebf1 100644
---- a/testing/command.py
-+++ b/testing/command.py
+Index: pyside6/testing/command.py
+===================================================================
+--- pyside6.orig/testing/command.py
++++ pyside6/testing/command.py
 @@ -194,6 +194,7 @@ def main():
          type=int,
          help="use build number n (0-based), latest = -1 (default)",

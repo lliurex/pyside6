@@ -8,22 +8,87 @@ and fails to find the headers; numpy has an explicit function for this
  build_scripts/utils.py | 8 ++------
  1 file changed, 2 insertions(+), 6 deletions(-)
 
-diff --git a/build_scripts/utils.py b/build_scripts/utils.py
-index 1ee3e39..e870fb2 100644
---- a/build_scripts/utils.py
-+++ b/build_scripts/utils.py
-@@ -68,12 +68,8 @@ def update_env_path(newpaths):
+Index: pyside6/build_scripts/utils.py
+===================================================================
+--- pyside6.orig/build_scripts/utils.py
++++ pyside6/build_scripts/utils.py
+@@ -20,7 +20,6 @@ from .log import log
+ from . import (PYSIDE_PYTHON_TOOLS, PYSIDE_LINUX_BIN_TOOLS, PYSIDE_UNIX_LIBEXEC_TOOLS,
+                PYSIDE_WINDOWS_BIN_TOOLS, PYSIDE_UNIX_BIN_TOOLS, PYSIDE_UNIX_BUNDLED_TOOLS)
  
+-from setuptools.errors import SetupError
  
- def get_numpy_location():
--    for p in sys.path:
--        if 'site-' in p:
--            numpy = Path(p).resolve() / 'numpy'
--            if numpy.is_dir():
+ try:
+     WindowsError
+@@ -72,7 +71,12 @@ def get_numpy_location():
+         if 'site-' in p:
+             numpy = Path(p).resolve() / 'numpy'
+             if numpy.is_dir():
 -                return os.fspath(numpy / 'core' / 'include')
--    return None
-+    import numpy
-+    return numpy.get_include()
++                candidate = numpy / '_core' / 'include'  # Version 2
++                if not candidate.is_dir():
++                    candidate = numpy / 'core' / 'include'  # Version 1
++                if candidate.is_dir():
++                    return os.fspath(candidate)
++                log.warning(f"Cannot find numpy include dir under {numpy}")
+     return None
  
  
- def platform_cmake_options(as_tuple_list=False):
+@@ -95,8 +99,8 @@ def copyfile(src, dst, force=True, _vars
+         src = Path(src.format(**_vars)) if _vars else Path(src)
+     if isinstance(dst, str):
+         dst = Path(dst.format(**_vars)) if _vars else Path(dst)
+-    assert(isinstance(src, Path))
+-    assert(isinstance(dst, Path))
++    assert (isinstance(src, Path))
++    assert (isinstance(dst, Path))
+ 
+     if not src.exists() and not force:
+         log.info(f"**Skipping copy file\n  {src} to\n  {dst}\n  Source does not exist")
+@@ -171,8 +175,8 @@ def copydir(src, dst, _filter=None, igno
+         src = Path(src.format(**_vars)) if _vars else Path(src)
+     if isinstance(dst, str):
+         dst = Path(dst.format(**_vars)) if _vars else Path(dst)
+-    assert(isinstance(src, Path))
+-    assert(isinstance(dst, Path))
++    assert (isinstance(src, Path))
++    assert (isinstance(dst, Path))
+ 
+     if _vars is not None:
+         if _filter is not None:
+@@ -950,7 +954,7 @@ def get_qtci_virtualEnv(python_ver, host
+                 _path = Path(os.getenv(var, ""))
+                 _pExe = _path / "python.exe"
+                 if not _pExe.is_file():
+-                    log.warn(f"Can't find python.exe from {_pExe}, using default python3")
++                    log.warning(f"Can't find python.exe from {_pExe}, using default python3")
+                     _pExe = Path(os.getenv("PYTHON3_32_PATH")) / "python.exe"
+             else:
+                 _pExe = Path(os.getenv("PYTHON2_32_PATH")) / "python.exe"
+@@ -961,7 +965,7 @@ def get_qtci_virtualEnv(python_ver, host
+                 _path = Path(os.getenv(var, ""))
+                 _pExe = _path / "python.exe"
+                 if not _pExe.is_file():
+-                    log.warn(f"Can't find python.exe from {_pExe}, using default python3")
++                    log.warning(f"Can't find python.exe from {_pExe}, using default python3")
+                     _pExe = Path(os.getenv("PYTHON3_PATH")) / "python.exe"
+         env_python = f"{_env}\\Scripts\\python.exe"
+         env_pip = f"{_env}\\Scripts\\pip.exe"
+@@ -972,7 +976,7 @@ def get_qtci_virtualEnv(python_ver, host
+         except Exception as e:
+             print(f"Exception {type(e).__name__}: {e}")
+             _pExe = "python3"
+-    return(_pExe, _env, env_pip, env_python)
++    return (_pExe, _env, env_pip, env_python)
+ 
+ 
+ def run_instruction(instruction, error, initial_env=None):
+@@ -1135,7 +1139,7 @@ def available_pyside_tools(qt_tools_path
+                              if tool_exist(bin_path / f"{tool}.exe")])
+     else:
+         lib_exec_path = qt_tools_path / "Qt" / "libexec" if package_for_wheels \
+-                        else qt_tools_path / "libexec"
++            else qt_tools_path / "libexec"
+         pyside_tools.extend([tool for tool in PYSIDE_UNIX_LIBEXEC_TOOLS
+                              if tool_exist(lib_exec_path / tool)])
+         if sys.platform == 'darwin':
